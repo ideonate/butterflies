@@ -1,0 +1,27 @@
+#!/srv/conda/bin/python
+# Download the butterfly images - python script for Binder to run after setting up Docker image on mybinder.org
+
+
+import urllib
+from pathlib import Path
+import os
+import pandas as pd
+
+# Where we store a CSV of all images including their class
+BUTTERFLIES_ORIG_FILEPATH = Path('./butterflies_original.csv')
+
+# Folder to download images to local disk
+IMG_FOLDER = 'butterfly_medium_images'
+
+df = pd.read_csv(BUTTERFLIES_ORIG_FILEPATH)
+
+results_folder = IMG_FOLDER + '/'
+if not os.path.exists(results_folder):
+    os.makedirs(results_folder)
+
+for i, row in df.iterrows():
+    filename = row['filename']
+    url = row['original_url']
+    pathname = results_folder + filename
+    print(f'Downloading {url} into {pathname}')
+    urllib.request.urlretrieve(url,  pathname)
