@@ -1,0 +1,10 @@
+# This requirements.txt is only really for binder
+ipywidgets==7.4.2
+widgetsnbextension==3.4.2
+notebook==5.7.8
+numpy==1.16.2
+pandas==0.24.2
+https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl
+torchvision
+fastai
+jupyter_innotater
