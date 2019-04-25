@@ -1,0 +1,22 @@
+# This is for running on mybinder.org
+name: fastai-cpu
+channels:
+- fastai
+- pytorch
+- defaults
+dependencies:
+- ipywidgets
+- matplotlib
+- notebook
+- numpy
+- pandas
+- pip
+- python>=3.6.0
+- widgetsnbextension
+- pytorch
+- pip:
+  - torchvision
+  - opencv-python
+  - fastai
+  - jupyter_innotater
+  
